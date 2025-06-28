@@ -1,0 +1,6 @@
+online-certificate-verification/
+├── frontend/
+│   └── index.html
+├── backend/
+│   ├── app.py
+│   └── requirements.txt
