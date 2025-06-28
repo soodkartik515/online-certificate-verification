@@ -1,7 +1,3 @@
-backend/app.py
-python
-Copy
-Edit
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
