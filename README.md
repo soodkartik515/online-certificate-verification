@@ -1,24 +1,35 @@
-# Online Certificate Verification System ✅
+# ✅ Online Certificate Verification System
 
 A full-stack web app that allows users to verify digital certificates by ID.
 
+
 ## 🔧 Technologies Used
-- **Frontend**: HTML, CSS (Tailwind), JavaScript
-- **Backend**: Flask (Python)
-- **Database**: JSON (for simulation)
-- **Hosting**: Render
+
+- **Frontend**: HTML, CSS (Tailwind), JavaScript  
+- **Backend**: Flask (Python)  
+- **Database**: JSON (for simulation)  
+- **Hosting**: Render  
+
+---
 
 ## 📦 Features
-- Certificate input and real-time verification
-- Fetches data from Flask backend
-- User-friendly responsive interface
-- Simple database integration
+
+- 🔐 Certificate input and real-time verification  
+- 📡 Fetches data from Flask backend  
+- 💻 User-friendly, responsive interface  
+- 🧩 Simple JSON-based backend database simulation  
+
+---
 
 ## 🚀 Live Demo
-🌐 [View App](https://certificate-backend-elr6.onrender.com)
+
+🌐 **View App**: [https://certificate-backend-elr6.onrender.com](https://certificate-backend-elr6.onrender.com)
+
+---
 
 ## 🛠 Local Setup
-1. Clone repo
-2. Install Python packages
+
+1. **Clone the repository**  
 ```bash
-pip install flask flask-cors
+git clone https://github.com/soodkartik515/online-certificate-verification.git
+cd online-certificate-verification
