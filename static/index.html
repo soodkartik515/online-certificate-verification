@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Certificate Verification</title>
+</head>
+<body>
+    <h1>Verify Your Certificate</h1>
+    <form id="verifyForm">
+        <input type="text" id="cert_id" placeholder="Enter Certificate ID" required>
+        <button type="submit">Verify</button>
+    </form>
+    <div id="result"></div>
 
+    <script>
+        document.getElementById('verifyForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const certId = document.getElementById('cert_id').value;
+            const formData = new FormData();
+            formData.append('cert_id', certId);
+
+            const response = await fetch('http://localhost:5000/verify', {
+                method: 'POST',
+                body: formData
+            });
+
+            const resultDiv = document.getElementById('result');
+            if (response.ok) {
+                const data = await response.json();
+                resultDiv.innerHTML = `<p>✅ Certificate is valid.</p><p>Name: ${data.name}</p><p>Course: ${data.course}</p><p>Date: ${data.date}</p>`;
+            } else {
+                resultDiv.innerHTML = `<p>❌ Invalid Certificate ID.</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
