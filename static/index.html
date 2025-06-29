@@ -15,18 +15,24 @@
         document.getElementById('verifyForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const certId = document.getElementById('cert_id').value;
-            const formData = new FormData();
-            formData.append('cert_id', certId);
 
-            const response = await fetch('http://localhost:5000/verify', {
+            const response = await fetch('https://certificate-backend-elr6.onrender.com/verify', {
                 method: 'POST',
-                body: formData
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ certificate_id: certId })
             });
 
             const resultDiv = document.getElementById('result');
             if (response.ok) {
                 const data = await response.json();
-                resultDiv.innerHTML = `<p>✅ Certificate is valid.</p><p>Name: ${data.name}</p><p>Course: ${data.course}</p><p>Date: ${data.date}</p>`;
+                resultDiv.innerHTML = `
+                    <p>✅ Certificate is valid.</p>
+                    <p><strong>Name:</strong> ${data.data.name}</p>
+                    <p><strong>Course:</strong> ${data.data.course}</p>
+                    <p><strong>Date:</strong> ${data.data.date}</p>
+                `;
             } else {
                 resultDiv.innerHTML = `<p>❌ Invalid Certificate ID.</p>`;
             }
